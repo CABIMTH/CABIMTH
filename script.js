@@ -1,18 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ===== Mobile Menu ===== */
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const closeMenu = document.getElementById('closeMenu');
-  if (hamburger) hamburger.addEventListener('click', () => {
-    mobileMenu.style.display = 'block';
-    mobileMenu.setAttribute('aria-hidden','false');
+/* ===== Mobile Menu ===== */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMenu = document.getElementById('closeMenu');
+
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
   });
-  if (closeMenu) closeMenu.addEventListener('click', () => {
-    mobileMenu.style.display = 'none';
-    mobileMenu.setAttribute('aria-hidden','true');
+}
+
+if (closeMenu) {
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
   });
-  if (mobileMenu) mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) { mobileMenu.style.display = 'none'; mobileMenu.setAttribute('aria-hidden','true'); } });
+}
+
+if (mobileMenu) {
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+      mobileMenu.classList.remove('active');
+    }
+  });
+}
+
 
   /* ===== Carousel (dots, arrows, auto, touch) ===== */
   const slidesWrap = document.getElementById('carouselSlides');
@@ -145,3 +157,4 @@ document.addEventListener('DOMContentLoaded', () => {
   if(yearEl) yearEl.textContent = new Date().getFullYear();
 
 });
+
