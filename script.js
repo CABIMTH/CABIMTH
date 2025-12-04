@@ -1,29 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-/* ===== Mobile Menu ===== */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const closeMenu = document.getElementById('closeMenu');
 
-if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-  });
-}
+// OUVRIR MENU
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.add('active');
+  mobileMenu.setAttribute('aria-hidden', 'false');
+});
 
-if (closeMenu) {
-  closeMenu.addEventListener('click', () => {
+// FERMER MENU (bouton X)
+closeMenu.addEventListener('click', () => {
+  mobileMenu.classList.remove('active');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+});
+
+// FERMER EN CLIQUANT EN DEHORS
+mobileMenu.addEventListener('click', (e) => {
+  if (e.target === mobileMenu) {
     mobileMenu.classList.remove('active');
-  });
-}
+    mobileMenu.setAttribute('aria-hidden', 'true');
+  }
+});
 
-if (mobileMenu) {
-  mobileMenu.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) {
-      mobileMenu.classList.remove('active');
-    }
-  });
-}
 
 
   /* ===== Carousel (dots, arrows, auto, touch) ===== */
@@ -157,4 +157,5 @@ if (mobileMenu) {
   if(yearEl) yearEl.textContent = new Date().getFullYear();
 
 });
+
 
