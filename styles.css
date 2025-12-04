@@ -30,9 +30,38 @@ html,body{height:100%;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Rob
 .nav-desktop a{text-decoration:none;color:#072033;font-weight:600}
 .btn-primary{background:var(--primary);color:white;padding:8px 14px;border-radius:10px;text-decoration:none;border:0}
 
-/* hamburger */
-.hamburger{display:none;border:0;background:none;padding:8px;border-radius:8px;cursor:pointer}
-.hamburger span{display:block;width:22px;height:2px;background:#06233b;margin:4px 0;border-radius:2px}
+/* ===== MOBILE MENU (caché par défaut) ===== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none; /* caché au départ */
+  justify-content: flex-end;
+  z-index: 999;
+}
+
+/* le panneau qui glisse */
+.mobile-panel {
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+}
+
+/* quand ouvert */
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu.active .mobile-panel {
+  transform: translateX(0);
+}
+
 
 /* ===== CAROUSEL FULLWIDTH ===== */
 .carousel-fullwidth {
@@ -297,4 +326,5 @@ main.container{padding:30px 18px 60px}
     height: 200px;
   }
 }
+
 
