@@ -129,6 +129,13 @@ body {
   color: #06233b;
 }
 
+@media(max-width: 480px){
+  .hero-title {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+}
+
 #animatedTitle {
   display: inline-block;
   white-space: nowrap;
@@ -151,6 +158,10 @@ body {
   font-weight: 700;
 }
 
+@media(max-width: 480px){
+  .section-title { font-size: 20px; }
+}
+
 .grid-10 {
   margin-top: 25px;
   display: grid;
@@ -170,7 +181,6 @@ body {
   align-items: center;
 }
 
-/* Alternance bleu/blanc */
 .box:nth-child(odd) { background: #e6f0ff; }
 
 /* ---------------------------------------------------
@@ -204,6 +214,14 @@ body {
 .carousel img.active {
   opacity: 1;
   transform: scale(1);
+}
+
+/* TITRE SOUS IMAGE */
+.product-caption {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 /* ---------------------------------------------------
@@ -343,14 +361,18 @@ body {
 ------------------------------------------------------ -->
 <h2 class="products-title" id="produits">NOS PRODUITS</h2>
 
-<div class="container carousel">
-  <img src="img1.jpg" class="active">
-  <img src="img2.jpg">
-  <img src="img3.jpg">
-  <img src="img4.jpg">
-  <img src="img5.jpg">
-  <img src="img6.jpg">
-  <img src="img7.jpg">
+<div class="container">
+  <div class="carousel">
+    <img src="img1.jpg" class="active">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+    <img src="img4.jpg">
+    <img src="img5.jpg">
+    <img src="img6.jpg">
+    <img src="img7.jpg">
+  </div>
+
+  <h3 id="productCaption" class="product-caption">Titre du produit</h3>
 </div>
 
 <!-- ---------------------------------------------------
@@ -423,16 +445,30 @@ function typeEffect() {
 }
 setInterval(typeEffect, 120);
 
-
-
-/* CAROUSEL PRODUITS */
+/* CAROUSEL PRODUITS + TITRES */
 let index = 0;
 const slides = document.querySelectorAll(".carousel img");
+const productCaption = document.getElementById("productCaption");
+
+/* TITRES QUE TU PEUX MODIFIER ICI 👇 */
+const productTitles = [
+  "Titre du produit 1",
+  "Titre du produit 2",
+  "Titre du produit 3",
+  "Titre du produit 4",
+  "Titre du produit 5",
+  "Titre du produit 6",
+  "Titre du produit 7"
+];
+
+productCaption.textContent = productTitles[0];
 
 setInterval(() => {
   slides[index].classList.remove("active");
   index = (index + 1) % slides.length;
   slides[index].classList.add("active");
+
+  productCaption.textContent = productTitles[index];
 }, 2600);
 </script>
 
