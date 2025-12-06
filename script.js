@@ -158,31 +158,3 @@ mobileMenu.addEventListener('click', (e) => {
 
 });
 
-(function animateCabisen() {
-  const phrase = "CABISEN — CABINET IMMOBILIER DU SÉNÉGAL";
-  const words = phrase.split(" ");
-  const container = document.getElementById("cabisenAnimated");
-
-  function playAnimation() {
-    container.innerHTML = "";
-    container.style.opacity = 1;
-
-    words.forEach((word, index) => {
-      const span = document.createElement("span");
-      span.className = "word";
-      span.style.animationDelay = (index * 0.35) + "s";
-      span.textContent = word;
-      container.appendChild(span);
-    });
-
-    // Faire disparaître le texte
-    setTimeout(() => {
-      container.style.opacity = 0;
-    }, words.length * 350 + 1200);
-  }
-
-  playAnimation();
-  setInterval(playAnimation, words.length * 350 + 2000);
-})();
-
-
