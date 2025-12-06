@@ -1,435 +1,444 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CABISEN — Cabinet Immobilier du Sénégal</title>
 
-<title>CABISEN — Immobilier</title>
+<!-- Google Font + Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* ===== RESET ===== */
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif}
-body{background:#f7f7f7;color:#06233b}
-
-/* ===== HEADER ===== */
-header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.07);padding:14px 0;position:sticky;top:0;z-index:50}
-.header-inner{max-width:1200px;margin:auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px}
-.brand img{width:55px;height:55px;border-radius:8px;object-fit:cover}
-.brand-title{font-size:20px;font-weight:600}
-.nav-desktop a{margin-left:20px;text-decoration:none;color:#06233b;font-weight:500}
-
-/* ===== MOBILE MENU ===== */
-.hamburger{display:none;border:0;background:none;cursor:pointer}
-.hamburger span{display:block;width:26px;height:3px;background:#06233b;margin:5px;border-radius:2px}
-.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:100}
-.mobile-panel{width:70%;height:100%;background:#fff;padding:25px}
-.close-mobile{font-size:32px;border:0;background:none;cursor:pointer}
-.mobile-nav a{display:block;margin:15px 0;font-size:18px;color:#06233b;text-decoration:none}
-
-/* ===== TITLE ANIMATION ===== */
-.title-anim{font-size:26px;text-align:center;margin:35px auto;font-weight:700;color:#06233b}
-.title-anim span{opacity:0;display:inline-block;animation:fadeWords 4s infinite}
-@keyframes fadeWords{
-  0%{opacity:0;transform:translateY(10px)}
-  20%{opacity:1;transform:translateY(0)}
-  80%{opacity:1}
-  100%{opacity:0;transform:translateY(-10px)}
+/* ---------------------------------------------------
+   GLOBAL
+--------------------------------------------------- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fa;
+  color: #06233b;
 }
 
-/* ===== SECTION TITLE ===== */
-.section-title{text-align:center;font-size:24px;font-weight:700;margin:35px 0;color:#06233b}
-
-/* ===== 10 CARREAUX (2×2) ===== */
-.grid-raisons{
-  max-width:1100px;margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:15px;padding:0 16px;
-}
-.case{
-  background:#fff;
-  border-radius:10px;
-  padding:25px;
-  min-height:120px;
-  border:2px solid #0a5ea8;
-  color:#0a5ea8;
-  font-weight:600;
-  display:flex;align-items:center;justify-content:center;
+.container {
+  width: 92%;
+  margin: auto;
 }
 
-/* ===== NOS PRODUITS CARROUSEL ===== */
-.carousel-produit{
-  width:100%;
-  max-width:600px;
-  height:330px;
-  margin:35px auto;
-  border-radius:14px;
-  overflow:hidden;
-  position:relative;
-}
-.carousel-produit img{
-  position:absolute;top:0;left:0;width:100%;height:100%;
-  object-fit:cover;opacity:0;
-  transform:scale(1.05);
-  transition:opacity 1.2s ease, transform 1.2s ease;
-}
-.carousel-produit img.active{
-  opacity:1;
-  transform:scale(1);
-}
-.produit-caption{
-  position:absolute;bottom:0;width:100%;
-  background:rgba(0,0,0,0.45);color:#fff;
-  padding:10px;text-align:center;font-size:16px
+/* ---------------------------------------------------
+   HEADER
+--------------------------------------------------- */
+.site-header {
+  background: #fff;
+  padding: 12px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:800px){
-  .nav-desktop{display:none}
-  .hamburger{display:block}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.nav-desktop a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #06233b;
+  font-weight: 600;
+}
+
+.hamburger {
+  display: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #06233b;
+  margin: 5px 0;
+  border-radius: 3px;
+}
+
+/* ---------------------------------------------------
+   MOBILE MENU
+--------------------------------------------------- */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 200;
+}
+
+.mobile-panel {
+  background: #fff;
+  width: 70%;
+  height: 100%;
+  padding: 30px;
+}
+
+.mobile-nav a {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #06233b;
+  text-decoration: none;
+}
+
+.close-mobile {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+/* Responsive header */
+@media(max-width: 768px) {
+  .nav-desktop { display: none; }
+  .hamburger { display: block; }
+}
+
+/* ---------------------------------------------------
+   TITRE ANIMÉ
+--------------------------------------------------- */
+.hero-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #06233b;
+}
+
+#animatedTitle {
+  display: inline-block;
+  white-space: nowrap;
+  border-right: 2px solid #06233b;
+  padding-right: 5px;
+  animation: blinkCursor 0.7s infinite;
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
+/* ---------------------------------------------------
+   10 BONNES RAISONS
+--------------------------------------------------- */
+.section-title {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.grid-10 {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
+
+.box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  min-height: 120px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Alternance bleu/blanc */
+.box:nth-child(odd) { background: #e6f0ff; }
+
+/* ---------------------------------------------------
+   CARROUSEL PRODUITS
+--------------------------------------------------- */
+.products-title {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.carousel {
+  margin-top: 35px;
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.carousel img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------------------------------------------------
+   FOOTER
+--------------------------------------------------- */
+.footer {
+  background: #0b1220;
+  color: #fff;
+  padding: 36px 18px;
+  margin-top: 40px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand a {
+  color: #cfe7ff;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-socials a {
+  color: #cfe7ff;
+  font-size: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 16px;
+  color: #9fb3d9;
+}
+
+/* ---------------------------------------------------
+   BOUTON WHATSAPP FLOTTANT
+--------------------------------------------------- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.28);
+  transition: transform .2s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.12);
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
+<!-- ---------------------------------------------------
+     HEADER
+------------------------------------------------------ -->
+<header class="site-header">
+  <div class="header-inner container">
     <div class="brand">
-      <img src="cabimth.png" alt="Logo">
-      <h1 class="brand-title">CABISEN</h1>
+      <img src="cabimth.png" alt="logo">
+      <div>
+        <h2>CABISEN</h2>
+        <p style="margin:0;font-size:13px;">Cabinet Immobilier du Sénégal</p>
+      </div>
     </div>
+
     <nav class="nav-desktop">
       <a href="index.html">Accueil</a>
-      <a href="cabisen.html">CABISEN</a>
-      <a href="mthvoyage.html">MTH Voyage</a>
+      <a href="#reasons">10 Raisons</a>
+      <a href="#produits">Produits</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
-<!-- MOBILE MENU -->
+<!-- ---------------------------------------------------
+     MENU MOBILE
+------------------------------------------------------ -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-panel">
-    <button class="close-mobile" id="closeMenu">&times;</button>
+    <button id="closeMenu" class="close-mobile">&times;</button>
+
     <nav class="mobile-nav">
       <a href="index.html">Accueil</a>
-      <a href="cabisen.html">CABISEN</a>
-      <a href="mthvoyage.html">MTH Voyage</a>
+      <a href="#reasons">10 Raisons</a>
+      <a href="#produits">Produits</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </div>
 
-<!-- TITRE ANIMÉ -->
-<h2 class="title-anim" id="animTitle"></h2>
+<!-- ---------------------------------------------------
+     TITRE ANIMÉ
+------------------------------------------------------ -->
+<h2 class="hero-title">
+  <span id="animatedTitle"></span>
+</h2>
 
-<script>
-/* ===== ANIMATION DU TITRE (mot par mot) ===== */
-const texte = "CABISEN — CABINET IMMOBILIER DU SENEGAL".split(" ");
-const title = document.getElementById("animTitle");
-let mot = 0;
+<!-- ---------------------------------------------------
+     10 BONNES RAISONS
+------------------------------------------------------ -->
+<h2 class="section-title" id="reasons">10 BONNES RAISONS DE NOUS CHOISIR</h2>
 
-function showWord(){
-  title.innerHTML = `<span>${texte[mot]}</span>`;
-  mot = (mot + 1) % texte.length;
-}
-showWord();
-setInterval(showWord, 2000);
-</script>
-
-<!-- 10 BONNES RAISONS -->
-<h2 class="section-title">10 BONNES RAISONS DE NOUS CHOISIR</h2>
-
-<div class="grid-raisons">
-  <div class="case">Raison 1</div>
-  <div class="case">Raison 2</div>
-  <div class="case">Raison 3</div>
-  <div class="case">Raison 4</div>
-  <div class="case">Raison 5</div>
-  <div class="case">Raison 6</div>
-  <div class="case">Raison 7</div>
-  <div class="case">Raison 8</div>
-  <div class="case">Raison 9</div>
-  <div class="case">Raison 10</div>
+<div class="container grid-10">
+  <div class="box">Raison 1</div>
+  <div class="box">Raison 2</div>
+  <div class="box">Raison 3</div>
+  <div class="box">Raison 4</div>
+  <div class="box">Raison 5</div>
+  <div class="box">Raison 6</div>
+  <div class="box">Raison 7</div>
+  <div class="box">Raison 8</div>
+  <div class="box">Raison 9</div>
+  <div class="box">Raison 10</div>
 </div>
 
-<!-- NOS PRODUITS -->
-<h2 class="section-title">NOS PRODUITS</h2>
+<!-- ---------------------------------------------------
+     NOS PRODUITS
+------------------------------------------------------ -->
+<h2 class="products-title" id="produits">NOS PRODUITS</h2>
 
-<div class="carousel-produit" id="carouselProduit">
-  <img src="p1.jpg" class="active" data-caption="Produit 1">
-  <img src="p2.jpg" data-caption="Produit 2">
-  <img src="p3.jpg" data-caption="Produit 3">
-  <img src="p4.jpg" data-caption="Produit 4">
-  <img src="p5.jpg" data-caption="Produit 5">
-  <div class="produit-caption" id="prodCaption">Produit 1</div>
+<div class="container carousel">
+  <img src="img1.jpg" class="active">
+  <img src="img2.jpg">
+  <img src="img3.jpg">
+  <img src="img4.jpg">
+  <img src="img5.jpg">
+  <img src="img6.jpg">
+  <img src="img7.jpg">
 </div>
 
-<script>
-/* ===== CARROUSEL AUTOMATIQUE PRODUITS ===== */
-const imgs = document.querySelectorAll("#carouselProduit img");
-const caption = document.getElementById("prodCaption");
-let index = 0;
-
-function switchImg(){
-  imgs[index].classList.remove("active");
-  index = (index + 1) % imgs.length;
-  imgs[index].classList.add("active");
-  caption.textContent = imgs[index].dataset.caption;
-}
-setInterval(switchImg, 2500);
-
-/* ===== MENU MOBILE ===== */
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-const closeMenu = document.getElementById("closeMenu");
-
-hamburger.onclick = ()=> mobileMenu.style.display="block";
-closeMenu.onclick = ()=> mobileMenu.style.display="none";
-mobileMenu.onclick = (e)=>{ if(e.target===mobileMenu) mobileMenu.style.display="none"; }
-</script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- FOOTER -->
+<!-- ---------------------------------------------------
+     FOOTER
+------------------------------------------------------ -->
 <footer id="contact" class="footer">
   <div class="container footer-inner">
 
     <div class="footer-brand">
       <h2>CABISEN & MTH VOYAGE</h2>
 
-      <p>Email :
-        <a href="mailto:cabisenmthvoyage@gmail.com">
-          cabisenmthvoyage@gmail.com
-        </a>
+      <p>Email : 
+        <a href="mailto:cabisenmthvoyage@gmail.com">cabisenmthvoyage@gmail.com</a>
       </p>
 
-      <p>Tél :
-          +221 76 767 0707 / 33 855 51 78 / 78 458 58 43
-        </a>
-      </p>
+      <p>Tél : +221 76 767 07 07 / 33 855 51 78 / 78 458 58 43</p>
 
-      <p>
-        <i class="fas fa-map-marker-alt"></i>
-        <strong>Siège 1 :</strong> Tivaoune Peulh – Cité Apix
-      </p>
-
-      <p>
-        <i class="fas fa-map-marker-alt"></i>
-        <strong>Siège 2 :</strong> Yeumbeul – Comico 4
-      </p>
+      <p><strong>Siège 1 :</strong> Tivaoune Peulh – Cité Apix</p>
+      <p><strong>Siège 2 :</strong> Yeumbeul – Comico 4</p>
     </div>
 
-    
-      <div class="footer-socials">
-        <a href="https://instagram.com/guidevoyage1" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com/profile.php?id=61580338392860" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://tiktok.com/@schoolmove315" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="https://chat.whatsapp.com/TON_ID_DE_GROUPE" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      </div>
+    <div class="footer-socials">
+      <a href="https://instagram.com/guidevoyage1" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/profile.php?id=61580338392860" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://tiktok.com/@schoolmove315" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/221767670707" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <div class="footer-bottom">© <span id="year"></span> CABISEN & MTH VOYAGE — Tous droits réservés</div>
-  </footer>
+  </div>
 
-  <!-- JS -->
-  <script src="script.js"></script>
+  <div class="footer-bottom">© <span id="year"></span> CABISEN — Tous droits réservés</div>
+</footer>
+
+<!-- ---------------------------------------------------
+     BOUTON WHATSAPP FLOTTANT
+------------------------------------------------------ -->
+<a href="https://wa.me/221767670707" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ---------------------------------------------------
+     SCRIPT JS
+------------------------------------------------------ -->
+<script>
+/* MOBILE MENU */
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = document.getElementById("closeMenu");
+
+hamburger.addEventListener("click", () => {
+  mobileMenu.style.display = "block";
+});
+
+closeMenu.addEventListener("click", () => {
+  mobileMenu.style.display = "none";
+});
+
+mobileMenu.addEventListener("click", e => {
+  if (e.target === mobileMenu) mobileMenu.style.display = "none";
+});
+
+/* TITRE ANIMÉ */
+const title = "CABISEN — CABINET IMMOBILIER DU SÉNÉGAL";
+const animatedTitle = document.getElementById("animatedTitle");
+let i = 0;
+function typeEffect() {
+  animatedTitle.textContent = title.substring(0, i);
+  i++;
+  if (i > title.length) i = 0;
+}
+setInterval(typeEffect, 120);
+
+
+
+/* CAROUSEL PRODUITS */
+let index = 0;
+const slides = document.querySelectorAll(".carousel img");
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 2600);
+</script>
+
 </body>
 </html>
+
 
 
 
