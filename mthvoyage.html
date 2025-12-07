@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MTH VOYAGE</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+
+/* GENERAL */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f6fa;
+  color: #222;
+}
+
+/* HEADER */
+header {
+  background: #0b1220;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* HERO */
+.hero {
+  height: 70vh;
+  background: url('images/plane-bg.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  background-attachment: fixed;
+}
+
+.hero-title {
+  font-size: 45px;
+  font-weight: 800;
+  text-shadow: 0 0 8px #000;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+#typing {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 18px;
+  color: #e8f3ff;
+}
+
+/* SERVICES */
+.section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.service-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: .3s;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+.service-box i {
+  font-size: 32px;
+  color: #0b5394;
+  margin-bottom: 10px;
+}
+
+/* 10 REASONS */
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.reason {
+  background: #0b5394;
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  height: 120px;
+}
+
+.reason:nth-child(even) {
+  background: white;
+  color: #0b5394;
+  border: 2px solid #0b5394;
+}
+
+/* DESTINATIONS */
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.dest-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.dest-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  transition: .4s;
+}
+
+.dest-card:hover img {
+  transform: scale(1.08);
+}
+
+.dest-title {
+  background: rgba(0,0,0,0.6);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* FOOTER */
+.footer {
+  background: #0b1220;
+  color: white;
+  padding: 35px 20px;
+  margin-top: 40px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand a {
+  color: #cfe7ff;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-socials a {
+  color: #cfe7ff;
+  font-size: 22px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 15px;
+  color: #9fb3d9;
+}
+
+/* WHATSAPP BUTTON */
+#whatsapp-btn {
+  position: fixed;
+  bottom: 22px;
+  right: 18px;
+  background: #25d366;
+  color: white;
+  font-size: 28px;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 999;
+  transition: .3s;
+}
+
+#whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+@media(max-width: 600px){
+  .hero-title { font-size: 32px; }
+  .hero-subtitle { font-size: 17px; }
+  #typing { font-size: 17px; }
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>MTH VOYAGE</h2>
+  <a href="index.html">Accueil</a>
+</header>
+
+<section class="hero">
+  <div class="hero-title">MTH VOYAGE</div>
+  <div class="hero-subtitle">Votre partenaire pour voyager, étudier et travailler à l’étranger</div>
+  <div id="typing"></div>
+</section>
+
+<section class="section">
+  <h2>Nos Services</h2>
+
+  <div class="services-grid">
+    <div class="service-box"><i class="fas fa-plane"></i><p>Voyages organisés</p></div>
+    <div class="service-box"><i class="fas fa-briefcase"></i><p>Contrats de travail</p></div>
+    <div class="service-box"><i class="fas fa-graduation-cap"></i><p>Procédures d’études</p></div>
+    <div class="service-box"><i class="fas fa-ticket-alt"></i><p>Vente de billets</p></div>
+    <div class="service-box"><i class="fas fa-passport"></i><p>Assistance Visa</p></div>
+    <div class="service-box"><i class="fas fa-hotel"></i><p>Réservation d’hôtels</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>10 Bonnes Raisons de Nous Choisir</h2>
+
+  <div class="reasons-grid">
+    <div class="reason"></div>
+    <div class="reason"></div>
+    <div class="reason"></div>
+    <div class="reason"></div>
+    <div class="reason"></div>
+    <div class="reason"></div>
+    <div class="reason"></div>
+    <div class="reason"></div>
+    <div class="reason"></div>
+    <div class="reason"></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Destinations Populaires</h2>
+
+  <div class="dest-grid">
+    <div class="dest-card">
+      <img src="images/france.jpg">
+      <div class="dest-title">France</div>
+    </div>
+    <div class="dest-card">
+      <img src="images/canada.jpg">
+      <div class="dest-title">Canada</div>
+    </div>
+    <div class="dest-card">
+      <img src="images/dubai.jpg">
+      <div class="dest-title">Dubaï</div>
+    </div>
+    <div class="dest-card">
+      <img src="images/turkey.jpg">
+      <div class="dest-title">Turquie</div>
+    </div>
+    <div class="dest-card">
+      <img src="images/italy.jpg">
+      <div class="dest-title">Italie</div>
+    </div>
+    <div class="dest-card">
+      <img src="images/spain.jpg">
+      <div class="dest-title">Espagne</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <h2>CABISEN & MTH VOYAGE</h2>
+
+      <p>Email : <a href="mailto:cabisenmthvoyage@gmail.com">cabisenmthvoyage@gmail.com</a></p>
+      <p>Tél : +221 76 767 0707 / 33 855 51 78 / 78 458 58 43</p>
+
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Siège 1 :</strong> Tivaoune Peulh – Cité Apix</p>
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Siège 2 :</strong> Yeumbeul – Comico 4</p>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">© <span id="year"></span> CABISEN & MTH VOYAGE — Tous droits réservés</div>
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+<a id="whatsapp-btn" href="https://wa.me/221767670707" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+// Footer year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Typing animation
+const textList = [
+  "Voyages partout dans le monde",
+  "Contrats de travail à l’étranger",
+  "Procédures d’études",
+  "Vente de billets d’avion",
+  "Assistance visa"
+];
+
+let index = 0;
+let charIndex = 0;
+let currentText = "";
+let isDeleting = false;
+
+function type() {
+  currentText = textList[index];
+
+  let displayed = currentText.substring(0, charIndex);
+  document.getElementById("typing").innerHTML = displayed;
+
+  if (!isDeleting) {
+    if (charIndex < currentText.length) {
+      charIndex++;
+    } else {
+      isDeleting = true;
+      setTimeout(type, 1500);
+      return;
+    }
+  } else {
+    if (charIndex > 0) {
+      charIndex--;
+    } else {
+      isDeleting = false;
+      index = (index + 1) % textList.length;
+    }
+  }
+
+  setTimeout(type, isDeleting ? 40 : 80);
+}
+
+type();
+</script>
+
+</body>
+</html>
